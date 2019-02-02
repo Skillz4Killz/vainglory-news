@@ -29,7 +29,7 @@ function LinkTab(props) {
 const styles = (theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: 'black',
   },
 });
 
@@ -42,6 +42,25 @@ class NavTabs extends React.Component {
     this.setState({ value });
   };
 
+  setPage(value) {
+    switch (value) {
+      case 1:
+        return <TabContainer>Page Two</TabContainer>;
+      case 2:
+        return <TabContainer>Page Three</TabContainer>;
+      case 3:
+        return <TabContainer>Page Four</TabContainer>;
+      case 4:
+        return <TabContainer>Page Five</TabContainer>;
+      default:
+        return (
+          <TabContainer>
+            <OfficialPage />
+          </TabContainer>
+        );
+    }
+  }
+
   render() {
     const { classes } = this.props;
     const { value } = this.state;
@@ -49,7 +68,7 @@ class NavTabs extends React.Component {
     return (
       <NoSsr>
         <div className={classes.root}>
-          <AppBar position="sticky">
+          <AppBar position="sticky" style={{ backgroundColor: '#00C2EC' }}>
             <Tabs
               variant="fullWidth"
               value={value}
@@ -62,15 +81,7 @@ class NavTabs extends React.Component {
               <LinkTab label="Misc." href="page3" />
             </Tabs>
           </AppBar>
-          {value === 0 && (
-            <TabContainer>
-              <OfficialPage />
-            </TabContainer>
-          )}
-          {value === 1 && <TabContainer>Page Two</TabContainer>}
-          {value === 2 && <TabContainer>Page Three</TabContainer>}
-          {value === 3 && <TabContainer>Page Four</TabContainer>}
-          {value === 4 && <TabContainer>Page Five</TabContainer>}
+          {this.setPage(value)}
         </div>
       </NoSsr>
     );

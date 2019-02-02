@@ -6,6 +6,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 const styles = (theme) => ({
   root: {
@@ -49,8 +50,8 @@ const tileData = [
     author: 'Short Description',
   },
   {
-    img: 'https://i.imgur.com/2Jk9Nrh.png',
-    title: 'Broken Myth: Anka News Article Title',
+    img: 'https://i.imgur.com/53xvhuI.jpg',
+    title: '3.9 Update Notes',
     author: 'Short Description',
   },
   {
@@ -59,6 +60,8 @@ const tileData = [
     author: 'By: Maxman30',
   },
 ];
+
+const twitterAccounts = ['vainglory', 'vainglorystatus', 'vaingloryesport'];
 function TitlebarGridList(props) {
   const { classes } = props;
 
@@ -78,6 +81,19 @@ function TitlebarGridList(props) {
               }
             />
           </GridListTile>
+        ))}
+
+        {twitterAccounts.map((account) => (
+          <TwitterTimelineEmbed
+            sourceType="timeline"
+            screenName={account}
+            theme="dark"
+            noHeader
+            noFooter
+            noScrollbar
+            options={{ height: 400 }}
+            key={account}
+          />
         ))}
       </GridList>
     </div>
