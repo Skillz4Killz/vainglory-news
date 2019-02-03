@@ -56,7 +56,22 @@ const tileData = [
   },
   {
     img: 'https://i.imgur.com/tgoxhWU.jpg',
-    title: 'Fan Art/Meme: Enemies Of Our Nationhf',
+    title: 'Fan Art/Meme: Enemies Of Our Nation',
+    author: 'By: Maxman30',
+  },
+  {
+    img: 'https://i.imgur.com/54eKwIx.gif',
+    title: 'Broken Myth: Ylva News Article Title',
+    author: 'Short Description',
+  },
+  {
+    img: 'https://i.imgur.com/53xvhuI.jpg',
+    title: '3.9 Update Notes',
+    author: 'Short Description',
+  },
+  {
+    img: 'https://i.imgur.com/tgoxhWU.jpg',
+    title: 'Fan Art/Meme: Enemies Of Our Nation',
     author: 'By: Maxman30',
   },
 ];
@@ -70,7 +85,11 @@ function TitlebarGridList(props) {
       <GridList cellHeight={300} cols={3}>
         {tileData.map((tile) => (
           <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
+            <img
+              src={tile.img}
+              alt={tile.title}
+              style={{ borderRadius: '50px' }}
+            />
             <GridListTileBar
               title={tile.title}
               subtitle={<span>by: {tile.author}</span>}
