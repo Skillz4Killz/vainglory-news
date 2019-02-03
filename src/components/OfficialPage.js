@@ -20,10 +20,19 @@ const styles = (theme) => ({
     width: 500,
     height: 450,
   },
+  title:{
+    borderRadius: '50px',
+  },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
   },
 });
+
+const StyledGridListTile = withStyles({
+  tile: {
+    borderRadius: '50px',
+  },
+})(GridListTile);
 
 /**
  * The example data is structured as follows:
@@ -84,11 +93,10 @@ function TitlebarGridList(props) {
     <div>
       <GridList cellHeight={300} cols={3}>
         {tileData.map((tile) => (
-          <GridListTile key={tile.img}>
-            <img
+          <StyledGridListTile key={tile.img} >
+            <img 
               src={tile.img}
               alt={tile.title}
-              style={{ borderRadius: '50px' }}
             />
             <GridListTileBar
               title={tile.title}
@@ -99,7 +107,7 @@ function TitlebarGridList(props) {
                 </IconButton>
               }
             />
-          </GridListTile>
+          </StyledGridListTile>
         ))}
 
         {twitterAccounts.map((account) => (
