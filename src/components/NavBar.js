@@ -9,11 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import OfficialPage from './OfficialPage';
 
 function TabContainer(props) {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  );
+  return <Typography component="div">{props.children}</Typography>;
 }
 
 TabContainer.propTypes = {
@@ -29,7 +25,7 @@ function LinkTab(props) {
 const styles = (theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'black',
+    backgroundColor: 'white',
   },
 });
 
@@ -68,7 +64,7 @@ class NavTabs extends React.Component {
     return (
       <NoSsr>
         <div className={classes.root}>
-          <AppBar position="sticky" style={{ backgroundColor: 'black' }}>
+          <AppBar style={{ backgroundColor: 'black' }}>
             <Tabs
               variant="fullWidth"
               value={value}

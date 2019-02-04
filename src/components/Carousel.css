@@ -1,7 +1,26 @@
 .carousel {
   height: 100vh;
+  width: 100vg;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.carousel h3 {
+  color: blue;
+  font-size: 30px;
+  margin: 20px 0 0 20px;
+  width: 190px;
+  text-shadow: 2px 2px 20px black;
+  z-index: 1;
+}
+
+.carousel img {
+  z-index: -1;
 }

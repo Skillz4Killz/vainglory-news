@@ -20,19 +20,25 @@ const items = [
     text: 'Play Magnus Now! Read all about it!',
   },
 ];
-
 export default class SimpleSlider extends React.Component {
   render() {
     return (
-      <Carousel>
-        {items.map((item, index) => (
-          <img
-            src={item.image}
-            alt={item.text}
-            key={index}
-            className="carousel"
-          />
-        ))}
+      <Carousel
+        autoplay
+        pauseOnHover={false}
+        swiping={true}
+        transitionMode="fade"
+        withoutControls={true}
+        wrapAround={true}
+        className="carousel"
+        autoplayInterval={5000}
+      >
+        <div className="carousel">
+          <h3>testing text</h3>
+          <img src={items[0].image} alt={items[0].text} />
+        </div>
+        
+        <img src={items[1].image} alt={items[1].text} className="carousel" />
       </Carousel>
     );
   }
