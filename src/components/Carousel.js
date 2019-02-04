@@ -1,5 +1,6 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from 'nuka-carousel';
+import './Carousel.css';
 
 const items = [
   {
@@ -20,22 +21,19 @@ const items = [
   },
 ];
 
-export default () => (
-  <Carousel>
-    {items.map((item) => (
-      <Carousel.Item key={item.title}>
-        <img
-          className="d-block w-100"
-          src={item.image}
-          alt={`Carousel slide: ${item.description}`}
-          height="450px"
-          width="450px"
-        />
-        <Carousel.Caption>
-          <h3>{item.title}</h3>
-          <p>{item.text}</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    ))}
-  </Carousel>
-);
+export default class SimpleSlider extends React.Component {
+  render() {
+    return (
+      <Carousel>
+        {items.map((item, index) => (
+          <img
+            src={item.image}
+            alt={item.text}
+            key={index}
+            className="carousel"
+          />
+        ))}
+      </Carousel>
+    );
+  }
+}

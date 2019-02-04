@@ -68,7 +68,7 @@ class NavTabs extends React.Component {
     return (
       <NoSsr>
         <div className={classes.root}>
-          <AppBar position="sticky" style={{ backgroundColor: '#00C2EC' }}>
+          <AppBar position="sticky" style={{ backgroundColor: 'black' }}>
             <Tabs
               variant="fullWidth"
               value={value}
