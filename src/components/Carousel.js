@@ -30,15 +30,15 @@ export default class SimpleSlider extends React.Component {
         transitionMode="fade"
         withoutControls={true}
         wrapAround={true}
-        className="carousel"
-        autoplayInterval={5000}
+        autoplayInterval={10000}
       >
-        <div className="carousel">
-          <h3>testing text</h3>
-          <img src={items[0].image} alt={items[0].text} />
-        </div>
-        
-        <img src={items[1].image} alt={items[1].text} className="carousel" />
+        {items.map((item, index) => (
+          <div className="carouselDiv">
+            <img src={item.image} alt={item.text} />
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </div>
+        ))}
       </Carousel>
     );
   }
