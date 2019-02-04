@@ -25,7 +25,7 @@ function LinkTab(props) {
 const styles = (theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'red',
   },
 });
 
@@ -71,10 +71,10 @@ class NavTabs extends React.Component {
               onChange={this.handleChange}
             >
               <LinkTab label="Official" href="page1" />
+              <LinkTab label="Art/Meme" href="page3" />
               <LinkTab label="API" href="page2" />
-              <LinkTab label="Esports" href="page3" />
-              <LinkTab label="Art/Memes" href="page3" />
-              <LinkTab label="Misc." href="page3" />
+              <LinkTab label="Esport" href="page3" />
+              <LinkTab label="Misc" href="page3" />
             </Tabs>
           </AppBar>
           {this.setPage(value)}

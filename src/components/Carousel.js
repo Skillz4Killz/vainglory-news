@@ -4,10 +4,10 @@ import './Carousel.css';
 
 const items = [
   {
-    image: 'https://i.imgur.com/6lnKcRR.gif',
-    title: 'G4M3R Contest Is Live!',
+    image: 'https://i.imgur.com/5zOBk6c.jpg',
+    title: 'UPDATE 3.10: YLVA THE NORTHERN WOLF',
     text:
-      'Be the top 3 active people on the discord server and unlock cool prizes every update!',
+      'A northern huntress that stalks her prey while preparing the perfect ambush with stealth traps and surprising damage.',
   },
   {
     image: 'https://i.imgur.com/rPlobei.png',
