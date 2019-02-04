@@ -33,7 +33,7 @@ export default class SimpleSlider extends React.Component {
         autoplayInterval={10000}
       >
         {items.map((item, index) => (
-          <div className="carouselDiv">
+          <div className="carouselDiv" key={index}>
             <img src={item.image} alt={item.text} />
             <h3>{item.title}</h3>
             <p>{item.text}</p>

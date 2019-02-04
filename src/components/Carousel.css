@@ -18,19 +18,19 @@
 }
 
 .carouselDiv h3 {
-  color: blue;
-  font-size: 30px;
+  color: white;
+  font-size: 40px;
   display: block;
-  top: 80%;
+  top: 75%;
   text-shadow: 2px 2px 20px black;
   position: relative;
 }
 
 .carouselDiv p {
-  color: red;
+  color: white;
   font-size: 20px;
   display: block;
-  top: 80%;
+  top: 75%;
   text-shadow: 2px 2px 20px black;
   position: relative;
 }
