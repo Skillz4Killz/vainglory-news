@@ -10,6 +10,7 @@ import OfficialPage from './OfficialPage';
 import API from './API';
 import Art from './Art';
 import Esports from './Esports';
+import Misc from './Misc';
 
 function TabContainer(props) {
   return <Typography component="div">{props.children}</Typography>;
@@ -62,7 +63,11 @@ class NavTabs extends React.Component {
           </TabContainer>
         );
       case 4:
-        return <TabContainer>Page Five</TabContainer>;
+        return (
+          <TabContainer>
+            <Misc />
+          </TabContainer>
+        );
       default:
         return (
           <TabContainer>

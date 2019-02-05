@@ -79,7 +79,8 @@ export default () => {
         <p className="artFooter">
           All submissions are made by users. All rights belong to the original
           creators. If someone has submitted your work without your permission,
-          please contact us on <a href="https://discord.gg/5za7RgF"> Discord</a>
+          please contact us on{' '}
+          <a href="https://discord.gg/5za7RgF"> Discord.</a>
         </p>
       </div>
     </div>

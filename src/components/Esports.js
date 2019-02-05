@@ -5,7 +5,7 @@ import fetch from 'chainfetch';
 
 // const twitterAccounts = ['vainglory', 'vainglorystatus', 'vaingloryesport'];
 
-export default class OfficialPage extends Component {
+export default class Esports extends Component {
   constructor(props) {
     super(props);
     this.state = { news: [] };
