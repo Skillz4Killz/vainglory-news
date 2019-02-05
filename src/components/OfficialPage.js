@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import Card from './Card';
 import Carousel from './Carousel';
 import Parser from 'rss-parser';
 
-const twitterAccounts = ['vainglory', 'vainglorystatus', 'vaingloryesport'];
+// const twitterAccounts = ['vainglory', 'vainglorystatus', 'vaingloryesport'];
 
 export default class OfficialPage extends Component {
   constructor(props) {
