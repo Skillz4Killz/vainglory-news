@@ -43,18 +43,22 @@ export default class OfficialPage extends Component {
   render() {
     return (
       <div>
-        <Carousel news={this.state.news.splice(0, 3)} />
-        <div className="CardboxGroup">
-          {this.state.news.map((tile, index) => (
-            <Card
-              link={tile.link}
-              image={tile.img}
-              title={tile.title}
-              text={tile.author}
-              key={index}
-            />
-          ))}
-        </div>
+        {this.state.news.length ? (
+          <div>
+            <Carousel news={this.state.news.splice(0, 3)} />
+            <div className="CardboxGroup">
+              {this.state.news.map((tile, index) => (
+                <Card
+                  link={tile.link}
+                  image={tile.img}
+                  title={tile.title}
+                  text={tile.author}
+                  key={index}
+                />
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     );
   }
