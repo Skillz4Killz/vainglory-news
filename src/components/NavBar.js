@@ -7,6 +7,7 @@ import NoSsr from '@material-ui/core/NoSsr';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import OfficialPage from './OfficialPage';
+import API from './API';
 
 function TabContainer(props) {
   return <Typography component="div">{props.children}</Typography>;
@@ -43,7 +44,11 @@ class NavTabs extends React.Component {
       case 1:
         return <TabContainer>Page Two</TabContainer>;
       case 2:
-        return <TabContainer>Page Three</TabContainer>;
+        return (
+          <TabContainer>
+            <API />
+          </TabContainer>
+        );
       case 3:
         return <TabContainer>Page Four</TabContainer>;
       case 4:
