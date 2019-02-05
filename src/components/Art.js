@@ -4,6 +4,14 @@ import Carousel from './Carousel';
 
 const feed = [
   {
+    author: 'BY: MAXMAN30',
+    link:
+      'https://cdn.discordapp.com/attachments/458727216117973012/539959443832438785/KennedyBannerMeme.jpg',
+    img:
+      'https://cdn.discordapp.com/attachments/458727216117973012/539959443832438785/KennedyBannerMeme.jpg',
+    title: 'Enemy Of The Nation!',
+  },
+  {
     author: 'BY: OWLET',
     link: 'http://instagram.com/owolet',
     img:
