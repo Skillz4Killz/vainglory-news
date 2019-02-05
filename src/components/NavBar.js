@@ -8,6 +8,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import OfficialPage from './OfficialPage';
 import API from './API';
+import Art from './Art';
+import Esports from './Esports';
 
 function TabContainer(props) {
   return <Typography component="div">{props.children}</Typography>;
@@ -42,7 +44,11 @@ class NavTabs extends React.Component {
   setPage(value) {
     switch (value) {
       case 1:
-        return <TabContainer>Page Two</TabContainer>;
+        return (
+          <TabContainer>
+            <Art />
+          </TabContainer>
+        );
       case 2:
         return (
           <TabContainer>
@@ -50,7 +56,11 @@ class NavTabs extends React.Component {
           </TabContainer>
         );
       case 3:
-        return <TabContainer>Page Four</TabContainer>;
+        return (
+          <TabContainer>
+            <Esports />
+          </TabContainer>
+        );
       case 4:
         return <TabContainer>Page Five</TabContainer>;
       default:

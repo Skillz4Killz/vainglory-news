@@ -6,8 +6,8 @@ export default (props) => (
     <div className="Card">
       <a href={props.link}>
         <img src={props.image} alt={props.text} />
-        <h3>{props.title}</h3>
-        <p>{props.text}</p>
+        <h3>{props.art ? null : props.title}</h3>
+        <p className={props.art ? 'artCredit' : 'null'}>{props.text}</p>
       </a>
     </div>
   </span>
