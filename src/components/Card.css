@@ -25,10 +25,14 @@
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.Card a {
+  text-decoration-color: transparent;
+}
+
 .Card h3 {
   color: rgb(255, 255, 255);
-  font-size: 20px;
-  padding-top: 40%;
+  font-size: 18px;
+  padding-top: 20%;
   display: block;
   position: relative;
   text-shadow: 2px 2px 20px black;
