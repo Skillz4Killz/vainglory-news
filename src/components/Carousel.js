@@ -15,16 +15,18 @@ export default (props) => (
     >
       {props.news.map((item, index) => (
         <div className="carouselDiv" key={index}>
-          <img src={item.img} alt={item.author} />
+          <a href={item.link}>
+            <img src={item.img} alt={item.author} />
 
-          <h3>
-            {props.art
-              ? item.author.toUpperCase()
-              : item.title
-              ? item.title.toUpperCase()
-              : null}
-          </h3>
-          <p>{props.art ? item.title : item.author.toUpperCase()}</p>
+            <h3>
+              {props.art
+                ? item.author.toUpperCase()
+                : item.title
+                ? item.title.toUpperCase()
+                : null}
+            </h3>
+            <p>{props.art ? item.title : item.author.toUpperCase()}</p>
+          </a>
         </div>
       ))}
     </Carousel>
