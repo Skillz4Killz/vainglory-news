@@ -61,4 +61,12 @@
 }
 
 @media (max-width: 720px) {
+  .carouselDiv h3 {
+    font-size: 2em;
+  }
+
+  .carouselDiv {
+    height: 100vh;
+    bottom: 25px;
+  }
 }

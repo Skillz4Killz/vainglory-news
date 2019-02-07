@@ -109,7 +109,7 @@
 
 @media (max-width: 720px) {
   .Card {
-    width: 280px;
+    width: 265px;
     height: 225px;
     position: relative;
     overflow: hidden;
