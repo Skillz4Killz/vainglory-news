@@ -6,23 +6,26 @@ const feed = [
   {
     author: 'BY: WIXOSS',
     title: 'Mid Lane Skaarf Gameplay 3.10 (Vainglory 5v5 Ranked)',
-    link: 'https://youtu.be/AmAII0PIHe0',
+    link: 'https://www.youtube.com/watch?v=AmAII0PIHe0',
     img:
       'https://images-ext-1.discordapp.net/external/Cy8AivYsBhUrXBOZ68ceR42S0KmuL-JHD8XdcetEwNM/https/i.ytimg.com/vi/AmAII0PIHe0/maxresdefault.jpg',
+    video: true,
   },
   {
     author: 'BY: KDALS',
     title: 'Making the Meta | CP Gwen | T10 PC Gameplay',
-    link: 'https://youtu.be/n8YZMGibuVg',
+    link: 'https://www.youtube.com/watch?v=n8YZMGibuVg',
     img:
       'https://images-ext-1.discordapp.net/external/ftJiGzIFfrnpxvYBnWPB1GCCzLU36q91FChLGMkdcpE/https/i.ytimg.com/vi/n8YZMGibuVg/hqdefault.jpg',
+    video: true,
   },
   {
     author: 'BY: KDALS',
     title: '3.10 In Depth Overview | Stat Changes, Possible Metas?',
-    link: 'https://youtu.be/9nZuvT4zYdg',
+    link: 'https://www.youtube.com/watch?v=9nZuvT4zYdg',
     img:
       'https://images-ext-2.discordapp.net/external/2PCyDTNt542_NwpfjNTIT9zkaP31Q7CW3xc-tNdrjJE/https/i.ytimg.com/vi/9nZuvT4zYdg/maxresdefault.jpg',
+    video: true,
   },
   {
     author: 'BY: MAXMAN30',
@@ -30,6 +33,7 @@ const feed = [
     link: 'https://www.youtube.com/watch?v=mi8OZt4LPJ8&feature=youtu.be',
     img:
       'https://images-ext-2.discordapp.net/external/64F6cf1fLVIDLvtr7Ql0BicBjx8amYJDrBGmGIeNPUg/https/i.ytimg.com/vi/mi8OZt4LPJ8/hqdefault.jpg',
+    video: true,
   },
   {
     author: 'BY: MAXMAN30',

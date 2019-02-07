@@ -15,18 +15,26 @@ export default (props) => (
     >
       {props.news.map((item, index) => (
         <div className="carouselDiv" key={index}>
-          <a href={item.link}>
-            <img src={item.img} alt={item.author} />
-
-            <h3>
-              {props.art
-                ? item.author.toUpperCase()
-                : item.title
-                ? item.title.toUpperCase()
-                : null}
-            </h3>
-            <p>{props.art ? item.title : item.author.toUpperCase()}</p>
-          </a>
+          {item.video ? (
+            <iframe
+              src={item.link.replace('watch?v=', 'embed/')}
+              title={index}
+              width="100%"
+              height="100%"
+            />
+          ) : (
+            <a href={item.link}>
+              <img src={item.img} alt={item.author} />
+              <h3>
+                {props.art
+                  ? item.author.toUpperCase()
+                  : item.title
+                  ? item.title.toUpperCase()
+                  : null}
+              </h3>
+              <p>{props.art ? item.title : item.author.toUpperCase()}</p>
+            </a>
+          )}
         </div>
       ))}
     </Carousel>

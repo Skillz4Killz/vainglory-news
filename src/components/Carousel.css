@@ -1,5 +1,5 @@
 .carouselDiv {
-  height: 100%;
+  height: 100vh;
   background-size: cover;
   bottom: 50px;
   padding: 0;
@@ -47,4 +47,18 @@
 
 .carouselDiv a {
   text-decoration-color: transparent;
+}
+
+@media (max-width: 1366px) {
+  .carouselDiv h3 {
+    font-size: 2.5em;
+  }
+
+  .carouselDiv {
+    height: 100vh;
+    bottom: 35px;
+  }
+}
+
+@media (max-width: 720px) {
 }
