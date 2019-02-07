@@ -1,5 +1,5 @@
 .carouselDiv {
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   bottom: 50px;
   padding: 0;
@@ -15,21 +15,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: -moz-linear-gradient(
-    left,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  background: -webkit-linear-gradient(
-    left,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  box-shadow: 0 0 8px 8px white inset;
 }
 
 .carouselDiv h3 {
