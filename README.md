@@ -14,8 +14,6 @@ This is a project that is designed to help show a potential replacement for the 
 	- Shows slightly older news in card format below.
 		- Maxes out at 15 news.
 		- ⚠ **TODO:** Add tweets from vainglory official channels so users can stay up to date.
-- Art/Memes Tab
-	- ⚠ **TODO:** filter art/memes
 - Esports Tab
 	- ⚠ **TODO:** Show information on Vainglory Esports.
 		- Unable to do currently as no information source available.
@@ -24,6 +22,7 @@ This is a project that is designed to help show a potential replacement for the 
 	- Shows Latest videos from Youtube
 	- Shows articles from sources like BrokenMyth
 	- ⚠ **TODO:** Show live streams at the top when stream is live.
+	- ⚠ **TODO:** filter art/memes/videos/articles
 - Tools Tab
 	- Shows top 3 latest changes for any tools.
 	- Shows a list of tools available for users.
