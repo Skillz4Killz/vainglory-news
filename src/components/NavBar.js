@@ -6,7 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import NoSsr from '@material-ui/core/NoSsr';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import OfficialPage from './OfficialPage';
+import HomePage from './HomePage';
 import Tools from './Tools';
 import Art from './Art';
 import Esports from './Esports';
@@ -71,7 +71,7 @@ class NavTabs extends React.Component {
       default:
         return (
           <TabContainer>
-            <OfficialPage />
+            <HomePage />
           </TabContainer>
         );
     }
@@ -90,7 +90,7 @@ class NavTabs extends React.Component {
               value={value}
               onChange={this.handleChange}
             >
-              <LinkTab label="Official" href="page1" />
+              <LinkTab label="Latest" href="page1" />
               <LinkTab label="Art/Meme" href="page3" />
               <LinkTab label="Esport" href="page3" />
               <LinkTab label="Misc" href="page3" />

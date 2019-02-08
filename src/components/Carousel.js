@@ -3,7 +3,7 @@ import Carousel from 'nuka-carousel';
 import './Carousel.css';
 
 export default (props) => (
-  <div>
+  <div style={{ paddingBottom: '50px' }}>
     <Carousel
       autoplay
       pauseOnHover={false}

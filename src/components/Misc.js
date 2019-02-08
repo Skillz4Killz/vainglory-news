@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from './Card';
-import Carousel from './Carousel';
 
 const feed = [
   {
@@ -51,24 +50,16 @@ const feed = [
   },
 ];
 
-export default () => {
-  const news = [...feed];
-  return (
-    <div>
-      <div>
-        <Carousel news={news.splice(0, 3)} />
-        <div className="CardboxGroup">
-          {news.map((tile, index) => (
-            <Card
-              link={tile.link}
-              image={tile.img}
-              title={tile.title}
-              text={tile.author}
-              key={index}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
+export default () => (
+  <div className="CardboxGroup" style={{ paddingTop: '75px' }}>
+    {feed.map((tile, index) => (
+      <Card
+        link={tile.link}
+        image={tile.img}
+        title={tile.title}
+        text={tile.author}
+        key={index}
+      />
+    ))}
+  </div>
+);
