@@ -8,7 +8,6 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import HomePage from './HomePage';
 import Tools from './Tools';
-import Art from './Art';
 import Esports from './Esports';
 import Misc from './Misc';
 
@@ -45,11 +44,7 @@ class NavTabs extends React.Component {
   setPage(value) {
     switch (value) {
       case 1:
-        return (
-          <TabContainer>
-            <Art />
-          </TabContainer>
-        );
+        return <TabContainer />;
       case 2:
         return (
           <TabContainer>
