@@ -6,11 +6,13 @@ import SEO from "../components/seo"
 import Card from "../components/Card"
 
 export default function({ pageContext }) {
+  const feed = Object.values(pageContext)
+
   return (
     <Layout>
       <SEO title="Art" />
       <div className="CardboxGroup">
-        {pageContext.edges.map(({ node: card }, index) => (
+        {feed.map((card, index) => (
           <Card
             link={card.link}
             image={card.image}
@@ -26,7 +28,7 @@ export default function({ pageContext }) {
 
 export const postQuery = graphql`
   query AllPostsDocumentsPerPage($path: String!) {
-    allMongodbProdPosts(filter: { category: { eq: $path } }) {
+    allMongodbProdPosts(filter: { path: { eq: $path } }) {
       edges {
         node {
           id

@@ -1,5 +1,16 @@
 const path = require("path")
 
+const organizedByCategory = allData => {
+  const organized = {}
+
+  for (const { node: data } of allData) {
+    if (organized[data.category]) organized[data.category].push(data)
+    else organized[data.category] = [data]
+  }
+
+  return Object.entries(organized)
+}
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
@@ -25,13 +36,16 @@ exports.createPages = ({ actions, graphql }) => {
     }
   `).then(res => {
     if (res.errors) return Promise.reject(res.errors)
+    const organizedData = organizedByCategory(
+      res.data.allMongodbProdPosts.edges
+    )
 
-    res.data.allMongodbProdPosts.edges.forEach(({ node }) => {
+    for (const data of organizedData) {
       createPage({
-        path: node.path,
+        path: data[0],
         component: newsPageTemplate,
-        context: res.data.allMongodbProdPosts,
+        context: data[1],
       })
-    })
+    }
   })
 }
