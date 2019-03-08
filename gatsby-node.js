@@ -1,6 +1,6 @@
 const path = require("path")
 
-exports.createPages = async ({ actions, graphql }) => {
+exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   const newsPageTemplate = path.resolve("src/templates/news-pages.js")
@@ -10,11 +10,15 @@ exports.createPages = async ({ actions, graphql }) => {
       allMongodbProdPosts {
         edges {
           node {
-            frontmatter {
-              error
-              name
-              path
-            }
+            id
+            author
+            category
+            path
+            image
+            link
+            messageID
+            channelID
+            title
           }
         }
       }
@@ -22,10 +26,12 @@ exports.createPages = async ({ actions, graphql }) => {
   `).then(res => {
     if (res.errors) return Promise.reject(res.errors)
 
-    for (const { node } of res.data.allMongodbProdPosts.edges)
+    res.data.allMongodbProdPosts.edges.forEach(({ node }) => {
       createPage({
-        path: node.frontmatter.path,
+        path: node.path,
         component: newsPageTemplate,
+        context: res.data.allMongodbProdPosts,
       })
+    })
   })
 }

@@ -1,17 +1,21 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-export default function({ data }) {
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Card from "../components/Card"
+
+export default function({ pageContext }) {
   return (
     <Layout>
       <SEO title="Art" />
       <div className="CardboxGroup">
-        {data.frontmatter.feed.map((tile, index) => (
+        {pageContext.edges.map(({ node: card }, index) => (
           <Card
-            link={tile.link}
-            image={tile.image}
-            text={tile.author}
-            art={true}
+            link={card.link}
+            image={card.image}
+            text={card.author}
+            art={["art", "videos"].includes(card.category)}
             key={index}
           />
         ))}
@@ -22,14 +26,18 @@ export default function({ data }) {
 
 export const postQuery = graphql`
   query AllPostsDocumentsPerPage($path: String!) {
-    allMongodbProdPosts(category: { eq: $path }) {
+    allMongodbProdPosts(filter: { category: { eq: $path } }) {
       edges {
         node {
-          frontmatter {
-            error
-            name
-            path
-          }
+          id
+          path
+          author
+          category
+          image
+          link
+          messageID
+          channelID
+          title
         }
       }
     }
