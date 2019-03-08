@@ -8,7 +8,7 @@
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
   justify-content: center;
-  margin: 5px;
+  margin: 10px;
 }
 
 .Card:hover {
@@ -17,14 +17,19 @@
 }
 
 .Card img {
-  height: 100%;
-  width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 100%;
+}
+
+.Image2{
+  height: 200%;
+  width: 200%;
+  position: relative;
+  filter: blur(5px);
+  opacity: 0.5;
 }
 
 .Card a {
@@ -56,8 +61,6 @@
 .CardboxGroup {
   display: flex;
   flex-wrap: wrap;
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
   margin: 0 auto;
   margin-top: 40px;
   align-items: left;
