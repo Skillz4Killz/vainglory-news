@@ -56,7 +56,7 @@ export default class OfficialPage extends Component {
             {twitterAccounts.map((username, index) => (
               <div
                 className="selfCenter"
-                style={{ width: "320px", height: "225px", margin: 5 }}
+                style={{ width: "320px", height: "225px", margin: 10 }}
                 key={index}
               >
                 <TwitterTimelineEmbed
