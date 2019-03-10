@@ -1,3 +1,5 @@
+const config = require("./config")
+
 module.exports = {
   siteMetadata: {
     title: `Vainglory News`,
@@ -30,5 +32,13 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: {
+        dbName: "prod",
+        collection: `posts`,
+        connectionURL: config.mongoDBLogin,
+      },
+    },
   ],
 }
