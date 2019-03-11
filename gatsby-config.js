@@ -30,12 +30,33 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
+    // {
+    //   resolve: `gatsby-source-mongodb`,
+    //   options: {
+    //     dbName: "prod",
+    //     collection: `posts`,
+    //     connectionURL: config.mongoDBLogin,
+    //   },
+    // },
     {
-      resolve: `gatsby-source-mongodb`,
+      resolve: "gatsby-source-mongodb",
       options: {
         dbName: "prod",
-        collection: `posts`,
-        connectionURL: process.env.mongoDBLogin,
+        collection: "posts",
+        server: {
+          address: process.env.mongoAddress,
+          port: process.env.mongoPort,
+        },
+        auth: {
+          user: process.env.mongoUser,
+          password: process.env.mongoPassword,
+        },
+        extraParams: {
+          ssl: true,
+          replicaSet: "Vainglory-News-shard-0",
+          authSource: "admin",
+          retryWrites: true,
+        },
       },
     },
   ],
