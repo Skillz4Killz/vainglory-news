@@ -1,0 +1,10 @@
+.tab {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbarIcons {
+  height: 15px;
+  width: 15px;
+  margin: 0 auto;
+}
