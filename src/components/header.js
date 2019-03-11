@@ -1,6 +1,11 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import NewspaperIcon from "./icons/newspaper"
+import PaletteIcon from "./icons/palette"
+import LightbulbIcon from "./icons/lightbulb"
+import TrophyIcon from "./icons/trophy"
+import ToolsIcon from "./icons/tools"
 import "./header.css"
 
 const Header = ({ siteTitle }) => (
@@ -21,42 +26,31 @@ const Header = ({ siteTitle }) => (
       >
         <li>
           <Link to="/" className="tab">
-            <img
-              src={require("./../images/newspaper-solid.svg")}
-              className="navbarIcons"
-            />{" "}
+            <NewspaperIcon className="navbarIcons" />
             Latest
           </Link>
         </li>
         <li>
           <Link to="/art" className="tab">
-            <img src={require("./../images/palette-solid.svg")} /> Art
+            <PaletteIcon className="navbarIcons" />
+            Art
           </Link>
         </li>
         <li>
           <Link to="/guides" className="tab">
-            <img
-              src={require("./../images/lightbulb-solid.svg")}
-              className="fas fa-lightbulb navicon"
-            />{" "}
+            <LightbulbIcon className="navbarIcons" />
             Guides
           </Link>
         </li>
         <li>
           <Link to="/esports" className="tab">
-            <img
-              src={require("./../images/trophy-solid.svg")}
-              className="fas fa-trophy navicon"
-            />{" "}
+            <TrophyIcon className="navbarIcons" />
             Esports
           </Link>
         </li>
         <li>
           <Link to="/tools" className="tab">
-            <img
-              src={require("./../images/tools-solid.svg")}
-              className="fas fa-tools navicon"
-            />{" "}
+            <ToolsIcon className="navbarIcons" />
             Tools
           </Link>
         </li>
@@ -74,3 +68,6 @@ Header.defaultProps = {
 }
 
 export default Header
+
+// Navbar icons are from fontawesome <3
+// https://fontawesome.com/license

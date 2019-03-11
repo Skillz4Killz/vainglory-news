@@ -3,14 +3,8 @@
   flex-direction: column;
 }
 
-.tab img {
-  height: 30px;
-  width: 30px;
-  margin: 0 auto;
-}
-
 .navbarIcons {
-  filter: grayscale(100%);
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
+  margin: 0 auto;
 }
