@@ -1,5 +1,3 @@
-const config = require("./config")
-
 module.exports = {
   siteMetadata: {
     title: `Vainglory News`,
@@ -37,7 +35,7 @@ module.exports = {
       options: {
         dbName: "prod",
         collection: `posts`,
-        connectionURL: config.mongoDBLogin,
+        connectionURL: process.env.mongoDBLogin,
       },
     },
   ],
