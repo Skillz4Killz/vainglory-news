@@ -25,7 +25,7 @@ export default function({ pageContext }) {
                   key={index}
                 />
               ))
-          : feed.map((card, index) => (
+          : feed.reverse().map((card, index) => (
               <Card
                 link={card.link}
                 image={card.image}
