@@ -1,4 +1,5 @@
 [![vgnews](https://i.imgur.com/FNdgURW.png)](https://vg-news.netlify.com)
+
 [![Discord](https://discordapp.com/api/guilds/540960656451698728/widget.png)](https://discord.gg/WHgY7B)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b35b09b3-2487-4826-9c78-7cc8bfee7834/deploy-status)](https://app.netlify.com/sites/vg-news/deploys)
 
