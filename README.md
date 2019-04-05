@@ -1,6 +1,6 @@
 [![vgnews](https://i.imgur.com/FNdgURW.png)](https://vg-news.netlify.com)
 
-[![Discord](https://discordapp.com/api/guilds/540960656451698728/embed.png)](https://discord.gg/WHgY7B)
+[![Discord](https://discordapp.com/api/guilds/540960656451698728/embed.png)](https://discord.gg/rKBgPhj)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b35b09b3-2487-4826-9c78-7cc8bfee7834/deploy-status)](https://app.netlify.com/sites/vg-news/deploys)
 
 # Vainglory News
@@ -53,7 +53,7 @@ This project is composed of several components to make it work.
 
 # Submit Your Content
 
-To submit your content, please join our [Discord Server]() and complete the submission process.
+To submit your content, please join our [Discord Server](https://discord.gg/rKBgPhj) and complete the submission process.
 
 # Want To Contribute?
 
