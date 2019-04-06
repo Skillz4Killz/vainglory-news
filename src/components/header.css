@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   font-family: "Brandon Grotesque";
+  font-size: 10px;
 }
 
 .navbarIcons {
-  height: 15px;
-  width: 15px;
+  height: 30px;
+  width: 30px;
   margin: 0 auto;
 }
