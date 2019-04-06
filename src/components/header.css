@@ -1,6 +1,7 @@
 .tab {
   display: flex;
   flex-direction: column;
+  font-family: "Brandon Grotesque";
 }
 
 .navbarIcons {
