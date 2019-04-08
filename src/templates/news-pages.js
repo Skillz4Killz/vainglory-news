@@ -25,15 +25,19 @@ export default function({ pageContext }) {
                   key={index}
                 />
               ))
-          : feed.reverse().map((card, index) => (
-              <Card
-                link={card.link}
-                image={card.image}
-                text={card.author}
-                art={["art", "guides", "esports"].includes(card.category)}
-                key={index}
-              />
-            ))}
+          : feed
+              .reverse()
+              .map((card, index) => (
+                <Card
+                  link={card.link}
+                  image={card.image}
+                  text={card.author}
+                  art={["art", "guides", "esports"].includes(
+                    card.category.toLowerCase()
+                  )}
+                  key={index}
+                />
+              ))}
       </div>
     </Layout>
   )
