@@ -32,6 +32,7 @@ export default function({ pageContext }) {
                   link={card.link}
                   image={card.image}
                   text={card.author}
+                  title={card.title}
                   art={["art", "guides", "esports"].includes(
                     card.category.toLowerCase()
                   )}
