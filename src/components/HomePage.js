@@ -28,21 +28,23 @@ export default class OfficialPage extends Component {
     )
 
     officialNews =
-      feed.items.map(item => ({
-        author: `BY: ${item.creator.toUpperCase()} On ${item.pubDate.substring(
-          0,
-          item.pubDate.length - 15
-        )}`,
-        title: item.title.toUpperCase(),
-        link: item.link,
-        image:
-          item["content:encoded"].indexOf('src="') >= 0
-            ? item["content:encoded"].substring(
-                item["content:encoded"].indexOf('src="') + 5,
-                item["content:encoded"].indexOf('alt="') - 2
-              )
-            : "https://media.giphy.com/media/2uIfi72zJRvXKZNM1R/giphy.gif",
-      })) || Posts.filter(post => post.category === "official")
+      feed.items.map(item => {
+        const image = item["content:encoded"].indexOf('src="') >= 0
+          ? item["content:encoded"].substring(
+            item["content:encoded"].indexOf('src="') + 5,
+            item["content:encoded"].indexOf('alt="') - 2
+          )
+          : "https://media.giphy.com/media/2uIfi72zJRvXKZNM1R/giphy.gif";
+        return {
+          author: `${item.creator.toUpperCase()} On ${item.pubDate.substring(
+            0,
+            item.pubDate.length - 15
+          )}`,
+          title: item.title.toUpperCase(),
+          link: item.link,
+          image: image.includes('flywheelsites.com') ? "https://media.giphy.com/media/2uIfi72zJRvXKZNM1R/giphy.gif" : image,
+        }
+      })
 
     this.setState({ news: officialNews })
   }
@@ -77,6 +79,8 @@ export default class OfficialPage extends Component {
                 image={item.image}
                 title={item.title}
                 text={item.author}
+                art={false}
+                official={true}
                 key={index}
               />
             ))}
@@ -89,12 +93,13 @@ export default class OfficialPage extends Component {
                 image={item.image}
                 title={item.title}
                 text={item.author}
+                art={true}
                 key={index}
               />
             ))}
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 }
