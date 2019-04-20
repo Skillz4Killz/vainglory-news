@@ -51,7 +51,7 @@ export default class OfficialPage extends Component {
     return (
       <div>
         <div>
-          <h1 className="banner">Official</h1>
+          <h1 className="banner">Vainglory News</h1>
           <div className="CardboxGroup">
             {twitterAccounts.map((username, index) => (
               <div
