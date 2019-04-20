@@ -40,8 +40,8 @@ const Layout = ({ children }) => (
               }}
             >
               All submissions are made by users. All rights belong to the
-              original creators. If someone has submitted your work without
-              permission or you would like to submit your own content, join
+              original creators. If someone submitted your work without
+              permission or you want to submit content, join
               <a href="https://discord.gg/5za7RgF" style={{ color: "orange" }}>
                 {" "}
                 Discord.
