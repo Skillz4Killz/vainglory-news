@@ -38,7 +38,7 @@ export default [
     category: 'tools',
   },
   {
-    author: 'BY: SEAN',
+    author: 'BY: Broken Myth',
     title: 'A Comprehensive Guide to Vainglory’s New Hero Ylva',
     link: 'https://twitter.com/teambrokenmyth/status/1088959333398994944',
     image:
