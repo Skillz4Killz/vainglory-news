@@ -37,8 +37,8 @@ export default () => (
 				<Layout>
 					<SEO title="Latest" keywords={[`vainglory`, `news`, `skillz4killz`]} />
 					<div>
-						<h1 className="banner">Live Streams</h1>
-						<div className="CardboxGroup">
+						{streams.length ? <h1 className="banner">Live Streams</h1> : null}
+						{streams.length ? <div className="CardboxGroup">
 							{streams.map((item, index) => (
 								<Card
 									link={item.link}
@@ -50,7 +50,7 @@ export default () => (
 									key={index}
 								/>
 							))}
-						</div>
+						</div> : null}
 						<h1 className="banner">Entertainment</h1>
 						<div className="CardboxGroup">
 							{notStreams.map((item, index) => (
