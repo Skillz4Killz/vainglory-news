@@ -1,6 +1,7 @@
 [![vgnews](https://i.imgur.com/FNdgURW.png)](https://vg-news.netlify.com)
 
 [![Discord](https://discordapp.com/api/guilds/540960656451698728/embed.png)](https://discord.gg/rKBgPhj)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b35b09b3-2487-4826-9c78-7cc8bfee7834/deploy-status)](https://app.netlify.com/sites/vg-news/deploys)
 
 # Vainglory News
@@ -17,21 +18,22 @@ This project is composed of several components to make it work.
 4. Discord Server
 
 - Users join the discord server
-- Use the **!submit** command that begins a Q&A session getting the necessary information.
+- Use the google form or **!submit** command that begins a Q&A session getting the necessary information.
 - The bot posts the request in #pending-approval channel.
 - Editors approve or reject the post after discussion and if approved the bot updates the database and rebuilds the website.
 
 # Features
 
 1. Clean and crisp tabs/navigation of the news tab
-
-- Helps organize content for users to view the content that they want to see.
+	- Helps organize content for users to view the content that they want to see.
 
 2. Latest Tab
-
-- Shows the @vainglory and @vainglorystatus twitter feeds
-- Shows the official news from the vainglorygame.com (Automatically updated when new posts are made)
-- Shows the posts that were marked to be featured by the editing team.
+	- Shows the @vainglory and @vainglorystatus twitter feeds
+	- Shows the official news from the vainglorygame.com
+		- Automatically updated when new posts are made)
+		- If no image or broken image link is used, the website will default to the Vainglory GIF.
+	- Shows the latest posts added to the website.
+		- Recurring users can see what's new without having to check every tab.
 
 3. Art Tab
 
@@ -39,12 +41,15 @@ This project is composed of several components to make it work.
 
 4. Guides Tab
 
-- Shows articles that are meant to be teaching players
-- Shows videos that are meant to be teaching players
+- Shows guides that are meant to be teaching players
 
-5. Esports Tab
+5. Entertainment Tab
 
+- Shows Twitch Live Streams for Vainglory.
+	- **STRICT** requirements and rules to be on this list.
 - Shows community tournaments
+- Show Vainglory Esports related news
+- Show Video Content like Youtube Videos
 
 6. Tools Tab
 
