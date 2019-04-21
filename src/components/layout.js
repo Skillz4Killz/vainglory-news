@@ -37,6 +37,7 @@ const Layout = ({ children }) => (
                 fontSize: "12px",
                 textShadow: "2px 2px 20px black",
                 marginLeft: "16px",
+                textAlign: "center"
               }}
             >
               All submissions are made by users. All rights belong to the

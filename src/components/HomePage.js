@@ -1,105 +1,94 @@
-import React, { Component } from "react"
 import Card from "./Card"
-import Posts from "../constants/posts"
-import Parser from "rss-parser"
 import { TwitterTimelineEmbed } from "react-twitter-embed"
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
 
 const twitterAccounts = ["vainglory", "vainglorystatus"]
-const unofficialNews = Posts.filter(
-  post =>
-    post.category !== "official" && !["art", "meme"].includes(post.category)
+
+export default () => (
+	<StaticQuery
+		query={graphql`
+		query HomePage {
+			allMongodbProdPosts {
+				edges {
+					node {
+						news {
+							path
+							author
+							category
+							image
+							link
+							title
+						}
+						id
+						path
+						author
+						category
+						image
+						link
+						messageID
+						channelID
+						title
+					}
+				}
+			}
+		}
+    `}
+		render={data => {
+			const posts = data.allMongodbProdPosts.edges.map(edge => edge.node).reverse();
+			if (!posts || !posts.length) return null;
+			const officialNews = posts.find(p => p.news);
+			return (
+				<div>
+					<div>
+						<h1 className="banner">Vainglory News</h1>
+						<div className="CardboxGroup">
+							{twitterAccounts.map((username, index) => (
+								<div
+									className="selfCenter"
+									style={{ width: "320px", height: "225px", margin: 10 }}
+									key={index}
+								>
+									<TwitterTimelineEmbed
+										sourceType="profile"
+										screenName={username}
+										autoHeight
+										theme="dark"
+										noHeader
+										noFooter
+										noBorders
+										noScrollbar
+									/>
+								</div>
+							))}
+							{officialNews.news.map((item, index) => (
+								<Card
+									link={item.link}
+									image={item.image}
+									title={item.title}
+									text={item.author}
+									art={false}
+									official={true}
+									key={index}
+								/>
+							))}
+						</div>
+						<h1 className="banner">Featured</h1>
+						<div className="CardboxGroup">
+							{posts.filter(p => !p.news).slice(0, 12).map((item, index) => (
+								<Card
+									link={item.link}
+									image={item.image}
+									title={item.title}
+									text={item.author}
+									art={true}
+									key={index}
+								/>
+							))}
+						</div>
+					</div>
+				</div>
+			)
+		}}
+	/>
 )
-let officialNews = []
-
-export default class OfficialPage extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { news: [], tweets: [] }
-  }
-
-  async componentDidMount() {
-    if (officialNews.length) return this.setState({ news: officialNews })
-    // Note: some RSS feeds can't be loaded in the browser due to CORS security.
-    // To get around this, you can use a proxy.
-    const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
-    const parser = new Parser()
-    const feed = await parser.parseURL(
-      CORS_PROXY + "https://www.vainglorygame.com/feed/"
-    )
-
-    officialNews =
-      feed.items.map(item => {
-        const image = item["content:encoded"].indexOf('src="') >= 0
-          ? item["content:encoded"].substring(
-            item["content:encoded"].indexOf('src="') + 5,
-            item["content:encoded"].indexOf('alt="') - 2
-          )
-          : "https://media.giphy.com/media/2uIfi72zJRvXKZNM1R/giphy.gif";
-        return {
-          author: `${item.creator.toUpperCase()} On ${item.pubDate.substring(
-            0,
-            item.pubDate.length - 15
-          )}`,
-          title: item.title.toUpperCase(),
-          link: item.link,
-          image: image.includes('flywheelsites.com') ? "https://media.giphy.com/media/2uIfi72zJRvXKZNM1R/giphy.gif" : image,
-        }
-      })
-
-    this.setState({ news: officialNews })
-  }
-
-  render() {
-    return (
-      <div>
-        <div>
-          <h1 className="banner">Vainglory News</h1>
-          <div className="CardboxGroup">
-            {twitterAccounts.map((username, index) => (
-              <div
-                className="selfCenter"
-                style={{ width: "320px", height: "225px", margin: 10 }}
-                key={index}
-              >
-                <TwitterTimelineEmbed
-                  sourceType="profile"
-                  screenName={username}
-                  autoHeight
-                  theme="dark"
-                  noHeader
-                  noFooter
-                  noBorders
-                  noScrollbar
-                />
-              </div>
-            ))}
-            {this.state.news.map((item, index) => (
-              <Card
-                link={item.link}
-                image={item.image}
-                title={item.title}
-                text={item.author}
-                art={false}
-                official={true}
-                key={index}
-              />
-            ))}
-          </div>
-          <h1 className="banner">Featured</h1>
-          <div className="CardboxGroup">
-            {unofficialNews.slice(0, 12).map((item, index) => (
-              <Card
-                link={item.link}
-                image={item.image}
-                title={item.title}
-                text={item.author}
-                art={true}
-                key={index}
-              />
-            ))}
-          </div>
-        </div>
-      </div >
-    )
-  }
-}

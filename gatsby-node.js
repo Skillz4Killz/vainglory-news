@@ -30,6 +30,14 @@ exports.createPages = ({ actions, graphql }) => {
             messageID
             channelID
             title
+            news {
+              path
+              author
+              category
+              image
+              link
+              title
+            }
           }
         }
       }
