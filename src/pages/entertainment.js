@@ -3,6 +3,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import StreamerAssets from "../constants/streamers"
 
 export default () => (
 	<StaticQuery
@@ -42,7 +43,7 @@ export default () => (
 							{streams.map((item, index) => (
 								<Card
 									link={item.link}
-									image={item.image}
+									image={StreamerAssets[item.author] || 'https://i.imgur.com/OgjCear.jpg'}
 									title={item.title}
 									text={item.author}
 									art={false}
