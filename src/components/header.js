@@ -43,9 +43,9 @@ const Header = ({ siteTitle }) => (
           </Link>
         </li>
         <li>
-          <Link to="/esports" className="tab">
+          <Link to="/entertainment" className="tab">
             <TrophyIcon className="navbarIcons" />
-            Esports
+            Entertainment
           </Link>
         </li>
         <li>

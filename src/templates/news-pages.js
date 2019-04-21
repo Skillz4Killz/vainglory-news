@@ -34,7 +34,7 @@ export default function ({ pageContext }) {
                 image={card.image}
                 text={card.author}
                 title={card.title}
-                art={["art", "guides", "esports"].includes(
+                art={["art", "guides", "esports", "entertainment"].includes(
                   card.category.toLowerCase()
                 )}
                 key={index}
