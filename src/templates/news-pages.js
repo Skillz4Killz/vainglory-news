@@ -34,9 +34,7 @@ export default function ({ pageContext }) {
                 image={card.image}
                 text={card.author}
                 title={card.title}
-                art={["art", "guides", "esports", "entertainment"].includes(
-                  card.category.toLowerCase()
-                )}
+                art={["art", "guides"].includes(card.category.toLowerCase())}
                 key={index}
               />
             ))}
@@ -59,6 +57,7 @@ export const postQuery = graphql`
           messageID
           channelID
           title
+          stream
         }
       }
     }

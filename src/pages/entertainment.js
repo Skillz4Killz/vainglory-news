@@ -1,25 +1,16 @@
-import Card from "./Card"
-import { TwitterTimelineEmbed } from "react-twitter-embed"
+import Card from "../components/Card"
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-
-const twitterAccounts = ["vainglory", "vainglorystatus"]
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export default () => (
 	<StaticQuery
 		query={graphql`
-		query HomePage {
+		query EntertainmentPage {
 			allMongodbProdPosts {
 				edges {
 					node {
-						news {
-							path
-							author
-							category
-							image
-							link
-							title
-						}
 						id
 						path
 						author
@@ -38,31 +29,17 @@ export default () => (
 		render={data => {
 			const posts = data.allMongodbProdPosts.edges.map(edge => edge.node).reverse();
 			if (!posts || !posts.length) return null;
-			const officialNews = posts.find(p => p.news);
+			const entertainmentPosts = posts.filter(p => p.category && p.category.toLowerCase() === 'entertainment');
+			const streams = entertainmentPosts.filter(p => p.stream);
+			const notStreams = entertainmentPosts.filter(p => !p.stream);
+
 			return (
-				<div>
+				<Layout>
+					<SEO title="Latest" keywords={[`vainglory`, `news`, `skillz4killz`]} />
 					<div>
-						<h1 className="banner">Vainglory News</h1>
+						<h1 className="banner">Live Streams</h1>
 						<div className="CardboxGroup">
-							{twitterAccounts.map((username, index) => (
-								<div
-									className="selfCenter"
-									style={{ width: "320px", height: "225px", margin: 10 }}
-									key={index}
-								>
-									<TwitterTimelineEmbed
-										sourceType="profile"
-										screenName={username}
-										autoHeight
-										theme="dark"
-										noHeader
-										noFooter
-										noBorders
-										noScrollbar
-									/>
-								</div>
-							))}
-							{officialNews.news.map((item, index) => (
+							{streams.map((item, index) => (
 								<Card
 									link={item.link}
 									image={item.image}
@@ -74,9 +51,9 @@ export default () => (
 								/>
 							))}
 						</div>
-						<h1 className="banner">Featured</h1>
+						<h1 className="banner">Entertainment</h1>
 						<div className="CardboxGroup">
-							{posts.filter(p => !p.news && !p.stream).slice(0, 12).map((item, index) => (
+							{notStreams.map((item, index) => (
 								<Card
 									link={item.link}
 									image={item.image}
@@ -88,7 +65,7 @@ export default () => (
 							))}
 						</div>
 					</div>
-				</div>
+				</Layout>
 			)
 		}}
 	/>

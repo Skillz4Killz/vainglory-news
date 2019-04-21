@@ -30,6 +30,7 @@ exports.createPages = ({ actions, graphql }) => {
             messageID
             channelID
             title
+            stream
             news {
               path
               author
@@ -49,6 +50,7 @@ exports.createPages = ({ actions, graphql }) => {
     )
 
     for (const data of organizedData) {
+      if (data[0] && data[0].toLowerCase() === 'entertainment') continue;
       createPage({
         path: data[0],
         component: newsPageTemplate,
