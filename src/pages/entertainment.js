@@ -51,7 +51,7 @@ export default () => (
 								/>
 							))}
 						</div> : null}
-						<h1 className="banner">Entertainment</h1>
+						{streams.length ? <h1 className="banner">Entertainment</h1> : null}
 						<div className="CardboxGroup">
 							{notStreams.map((item, index) => (
 								<Card
@@ -65,7 +65,7 @@ export default () => (
 							))}
 						</div>
 					</div>
-				</Layout>
+				</Layout >
 			)
 		}}
 	/>
