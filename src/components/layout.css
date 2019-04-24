@@ -800,15 +800,17 @@ body {
 
 .banner {
   color: white;
-  font-size: 30px;
+  font-size: 24px;
   font-family: "Brandon Grotesque";
   text-align: center;
   text-transform: uppercase;
   border-bottom: 1px solid #ffffff;
   padding-bottom: 13px;
-  max-width: 90%;
+  max-width: 100%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 36px;
+  margin-left: 16px;
+  margin-right: 16px;
   text-align: left;
 }
 

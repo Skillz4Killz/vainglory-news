@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => (
     <div
       style={{
         background: "rgb(43, 43, 45)",
-        paddingTop: "10px",
+        paddingTop: "16px",
         textDecoration: "none",
       }}
     >
@@ -21,36 +21,37 @@ const Header = ({ siteTitle }) => (
         style={{
           listStyle: "none",
           display: "flex",
-          justifyContent: "space-evenly",
+          marginLeft: '16px',
+          marginBottom:'0px'
         }}
       >
-        <li>
+        <li className='buttonheader'>
           <Link to="/" className="tab">
-            <NewspaperIcon className="navbarIcons" />
+         { /* <NewspaperIcon className="navbarIcons" /> */}
             Latest
           </Link>
         </li>
-        <li>
+        <li className='buttonheader'>
           <Link to="/art" className="tab">
-            <PaletteIcon className="navbarIcons" />
+            {/*<PaletteIcon className="navbarIcons" /> */}
             Art
           </Link>
         </li>
-        <li>
+        <li className='buttonheader'>
           <Link to="/guides" className="tab">
-            <LightbulbIcon className="navbarIcons" />
+            {/*<LightbulbIcon className="navbarIcons" />*/}
             Guides
           </Link>
         </li>
-        <li>
+        <li className='buttonheader'>
           <Link to="/entertainment" className="tab">
-            <TrophyIcon className="navbarIcons" />
+            {/*<TrophyIcon className="navbarIcons" />*/}
             Entertainment
           </Link>
         </li>
-        <li>
+        <li className='buttonheader'>
           <Link to="/tools" className="tab">
-            <ToolsIcon className="navbarIcons" />
+            {/*<ToolsIcon className="navbarIcons" />*/}
             Tools
           </Link>
         </li>
