@@ -1,3 +1,5 @@
+const config = require("./config")
+
 module.exports = {
   siteMetadata: {
     title: `Vainglory News`,
@@ -39,17 +41,17 @@ module.exports = {
     //   },
     // },
     {
-      resolve: "gatsby-source-mongodb",
+      resolve: `gatsby-source-mongodb`,
       options: {
-        dbName: "prod",
-        collection: "posts",
+        dbName: `prod`,
+        collection: [`posts`, 'clientSchema'],
         server: {
-          address: process.env.mongoAddress,
-          port: process.env.mongoPort,
+          address: config.mongoAddress,
+          port: config.mongoPort,
         },
         auth: {
-          user: process.env.mongoUser,
-          password: process.env.mongoPassword,
+          user: config.mongoUser,
+          password: config.mongoPassword,
         },
         extraParams: {
           ssl: true,

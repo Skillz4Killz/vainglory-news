@@ -2,14 +2,13 @@ import React from "react"
 import "./Card.css"
 
 export default props => (
-  <span>
+  <a href={props.link}>
     <div className="Card">
-      <a href={props.link}>
         <img className='Image2' src={props.image} alt={props.text} />
-        <img src={props.image} alt={props.text} />
+          <img src={props.image} alt={props.text} />
+        <div className='gradient'></div>
         <h4 className={props.art ? "artTitle" : "title"}>{props.official ? props.title : props.title ? props.title.substring(0, 30) : ''}</h4>
         <p className={props.official ? "officialAuthor" : "author"}>{props.text}</p>
-      </a>
-    </div>
-  </span>
+</div>
+  </a>
 )
