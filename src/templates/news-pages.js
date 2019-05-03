@@ -9,7 +9,6 @@ export default function ({ pageContext }) {
   const feed = Object.values(pageContext)
   const category = feed[0].category
   if (!category) return null;
-  console.log('checking feed shit', feed[0])
   return (
     <Layout>
       <SEO title={category.charAt(0).toUpperCase() + category.slice(1)} />
@@ -49,6 +48,13 @@ export const postQuery = graphql`
     allMongodbProdPosts(filter: { path: { eq: $path } }) {
       edges {
         node {
+          localImage {
+            childImageSharp {
+              fluid(maxWidth: 320, maxHeight: 225) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           id
           path
           author

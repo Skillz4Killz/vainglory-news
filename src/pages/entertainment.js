@@ -12,6 +12,13 @@ export default () => (
 			allMongodbProdPosts {
 				edges {
 					node {
+						localImage {
+							childImageSharp {
+								fluid(maxWidth: 320, maxHeight: 225) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 						id
 						path
 						author
@@ -33,7 +40,7 @@ export default () => (
 			const entertainmentPosts = posts.filter(p => p.category && p.category.toLowerCase() === 'entertainment');
 			const streams = entertainmentPosts.filter(p => p.stream);
 			const notStreams = entertainmentPosts.filter(p => !p.stream);
-
+			console.log(notStreams[0])
 			return (
 				<Layout>
 					<SEO title="Latest" keywords={[`vainglory`, `news`, `skillz4killz`]} />
@@ -66,7 +73,7 @@ export default () => (
 							))}
 						</div>
 					</div>
-				</Layout >
+				</Layout>
 			)
 		}}
 	/>
