@@ -1,11 +1,11 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import NewspaperIcon from "./icons/newspaper"
+/* import NewspaperIcon from "./icons/newspaper"
 import PaletteIcon from "./icons/palette"
 import LightbulbIcon from "./icons/lightbulb"
 import TrophyIcon from "./icons/trophy"
-import ToolsIcon from "./icons/tools"
+import ToolsIcon from "./icons/tools" */
 import "./header.css"
 
 const Header = ({ siteTitle }) => (
@@ -15,16 +15,28 @@ const Header = ({ siteTitle }) => (
         background: "rgb(43, 43, 45)",
         paddingTop: "16px",
         textDecoration: "none",
+        position: 'fixed',
+        width: '100%',
+        top: '0',
+        zIndex:'10000'
+        
       }}
     >
       <ul
         style={{
           listStyle: "none",
           display: "flex",
-          marginLeft: '16px',
-          marginBottom:'0px'
+          marginLeft: '0px',
+          marginBottom: '0px',
+          overflowX: 'visible',
+          width: '100%',
+          whiteSpace: 'nowrap',
+          position: 'relative',
+          overflowX: 'scroll',
+          overflowY: 'hidden',
+          WebkitOverflowScrolling: 'touch',
         }}
-      >
+  >
         <li className='buttonheader'>
           <Link to="/" className="tab">
          { /* <NewspaperIcon className="navbarIcons" /> */}

@@ -8,6 +8,7 @@
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
   margin: 10px;
+  text-align: center;
 }
 
 .Card:hover {
@@ -15,22 +16,22 @@
   box-shadow: 0 10px 80px rgba(0, 0, 0, 0.651);
 }
 
-.Card img {
+.Image1 {
   position: absolute;
-  top: 50%;
+  top: 0%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-0%);
   max-width: 100%;
   max-height:100%;
 }
 
 .Image2{
-  height: 200%;
-  width: 200%;
-  position: relative;
+  width: 100%;
+  height: 100%;
   filter: blur(5px);
-  opacity: 0.5;
-}
+  position: relative;
+  opacity: 0.75;
+  }
 
 .Card a {
   text-decoration-color: transparent;
@@ -84,7 +85,7 @@
   height: 100px;
   width: 100%;
   bottom: 0;
-  background: linear-gradient(0deg,#1f1f22e8 5%,#1f1f21cb 50%,rgba(25,26,27,0));
+  background: linear-gradient(0deg,rgba(6, 6, 19, 0.95) 30%,rgba(31,31,33,.8) 60%,rgba(25,26,27,0));
   pointer-events: none;
 }
 
@@ -98,15 +99,17 @@
   margin-left: 16px;
 }
 @media (max-width: 920px) {
-.Card {
-  width: 240px;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  cursor: pointer;
-  margin: 10px;
+  .CardboxGroup {
+      display: grid;
+      grid-template-columns: repeat(50, 320px);
+      grid-column-gap: 16px;
+    justify-content: left;
+    overflow-x: visible;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 }
