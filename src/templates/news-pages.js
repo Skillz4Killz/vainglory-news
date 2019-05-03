@@ -9,6 +9,7 @@ export default function ({ pageContext }) {
   const feed = Object.values(pageContext)
   const category = feed[0].category
   if (!category) return null;
+  console.log('checking feed shit', feed[0])
   return (
     <Layout>
       <SEO title={category.charAt(0).toUpperCase() + category.slice(1)} />
