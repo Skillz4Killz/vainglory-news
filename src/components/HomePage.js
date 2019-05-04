@@ -2,10 +2,6 @@ import Card from "./Card"
 import { TwitterTimelineEmbed } from "react-twitter-embed"
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import StormQueen from "../images/StormQueen_wide.png"
-import CathKestrel from "../images/CathKestrel.jpeg"
-
-const defaultImages = [StormQueen, CathKestrel]
 
 const twitterAccounts = ["vainglory", "vainglorystatus"]
 
@@ -51,7 +47,10 @@ export default () => (
         .map(edge => edge.node)
         .reverse()
       if (!posts || !posts.length) return null
-      const officialNews = posts.find(p => p.news)
+      const officialNews = posts
+        .filter(p => p.category === "official")
+        .reverse()
+
       return (
         <div>
           <div>
@@ -75,16 +74,10 @@ export default () => (
                   />
                 </div>
               ))}
-              {officialNews.news.map((item, index) => (
+              {officialNews.map((item, index) => (
                 <Card
                   link={item.link}
-                  image={
-                    item.image.endsWith(".gif")
-                      ? defaultImages[
-                          Math.floor(Math.random() * defaultImages.length)
-                        ]
-                      : item.image
-                  }
+                  fixed={item.localImage.childImageSharp.fixed}
                   title={item.title}
                   text={item.author}
                   art={false}
@@ -96,7 +89,7 @@ export default () => (
             <h1 className="banner">Featured</h1>
             <div className="CardboxGroup">
               {posts
-                .filter(p => !p.news && !p.stream)
+                .filter(p => !p.news && !p.stream && p.category !== "official")
                 .slice(0, 12)
                 .map((item, index) => (
                   <Card
