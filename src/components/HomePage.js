@@ -20,6 +20,13 @@ export default () => (
 							link
 							title
 						}
+						localImage {
+							childImageSharp {
+								fixed {
+									...GatsbyImageSharpFixed
+								}
+							}
+						}
 						id
 						path
 						author
@@ -79,7 +86,7 @@ export default () => (
 							{posts.filter(p => !p.news && !p.stream).slice(0, 12).map((item, index) => (
 								<Card
 									link={item.link}
-									image={item.image}
+									fixed={item.localImage.childImageSharp.fixed}
 									title={item.title}
 									text={item.author}
 									art={true}
