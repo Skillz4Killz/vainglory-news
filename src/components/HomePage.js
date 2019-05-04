@@ -2,7 +2,10 @@ import Card from "./Card"
 import { TwitterTimelineEmbed } from "react-twitter-embed"
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import StormQueen from "../images/StormQueen_wide.png"
+import StormQueen from "../images/stormqueen.png"
+import CathKestrel from "../images/CathKestrel.jpeg"
+
+const defaultImages = [StormQueen, CathKestrel]
 
 const twitterAccounts = ["vainglory", "vainglorystatus"]
 
@@ -75,7 +78,13 @@ export default () => (
               {officialNews.news.map((item, index) => (
                 <Card
                   link={item.link}
-                  image={item.image.endsWith(".gif") ? StormQueen : item.image}
+                  image={
+                    item.image.endsWith(".gif")
+                      ? defaultImages[
+                          Math.floor(Math.random() * defaultImages.length)
+                        ]
+                      : item.image
+                  }
                   title={item.title}
                   text={item.author}
                   art={false}
