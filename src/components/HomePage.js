@@ -2,7 +2,7 @@ import Card from "./Card"
 import { TwitterTimelineEmbed } from "react-twitter-embed"
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import StormQueen from "../images/stormqueen.png"
+import StormQueen from "../images/StormQueen_wide.png"
 import CathKestrel from "../images/CathKestrel.jpeg"
 
 const defaultImages = [StormQueen, CathKestrel]
