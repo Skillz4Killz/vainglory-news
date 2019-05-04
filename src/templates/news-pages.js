@@ -3,6 +3,11 @@ import Card from "../components/Card"
 import { StaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import koshkaCounter from "../images/koshka'scounter.gif"
+
+const gifAssets = {
+  "koshka'scounter": koshkaCounter,
+}
 
 export default ({ pageContext }) => (
   <StaticQuery
@@ -66,9 +71,29 @@ export default ({ pageContext }) => (
                       key={index}
                     />
                   ))
-              : relevantData
-                  .reverse()
-                  .map((card, index) => (
+              : relevantData.reverse().map((card, index) => {
+                  if (card.node.image.endsWith(".gif"))
+                    console.log(
+                      card.node.title
+                        .split(" ")
+                        .join("")
+                        .toLowerCase(),
+                      gifAssets[
+                        card.node.title
+                          .split(" ")
+                          .join("")
+                          .toLowerCase()
+                      ]
+                    )
+                  const imageAsset = card.node.image.endsWith(".gif")
+                    ? gifAssets[
+                        card.node.title
+                          .split(" ")
+                          .join()
+                          .toLowerCase()
+                      ]
+                    : card.node.image
+                  return (
                     <Card
                       link={card.node.link}
                       fixed={
@@ -76,7 +101,7 @@ export default ({ pageContext }) => (
                           ? card.node.localImage.childImageSharp.fixed
                           : null
                       }
-                      image={card.node.image}
+                      image={imageAsset}
                       text={card.node.author}
                       title={card.node.title}
                       art={["art", "guides"].includes(
@@ -84,7 +109,8 @@ export default ({ pageContext }) => (
                       )}
                       key={index}
                     />
-                  ))}
+                  )
+                })}
           </div>
         </Layout>
       )
