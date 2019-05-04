@@ -14,8 +14,8 @@ export default () => (
 					node {
 						localImage {
 							childImageSharp {
-								fluid(maxWidth: 320, maxHeight: 225) {
-									...GatsbyImageSharpFluid
+								fixed {
+									...GatsbyImageSharpFixed
 								}
 							}
 						}
@@ -40,7 +40,7 @@ export default () => (
 			const entertainmentPosts = posts.filter(p => p.category && p.category.toLowerCase() === 'entertainment');
 			const streams = entertainmentPosts.filter(p => p.stream);
 			const notStreams = entertainmentPosts.filter(p => !p.stream);
-			console.log(notStreams[0])
+
 			return (
 				<Layout>
 					<SEO title="Latest" keywords={[`vainglory`, `news`, `skillz4killz`]} />
@@ -65,6 +65,7 @@ export default () => (
 								<Card
 									link={item.link}
 									image={item.image}
+									fixed={item.localImage.childImageSharp.fixed}
 									title={item.title}
 									text={item.author}
 									art={true}

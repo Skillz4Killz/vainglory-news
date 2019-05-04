@@ -21,13 +21,6 @@ exports.createPages = ({ actions, graphql }) => {
       allMongodbProdPosts {
         edges {
           node {
-            localImage {
-              childImageSharp {
-                fluid(maxWidth: 320, maxHeight: 225) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
             id
             author
             category
@@ -55,7 +48,7 @@ exports.createPages = ({ actions, graphql }) => {
     const organizedData = organizedByCategory(
       res.data.allMongodbProdPosts.edges
     )
-    console.log('where does this log', res.data.allMongodbProdPosts.edges)
+    // console.log('where does this log', res.data.allMongodbProdPosts.edges)
     for (const data of organizedData) {
       if (data[0] && data[0].toLowerCase() === 'entertainment') continue;
       createPage({
