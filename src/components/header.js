@@ -16,53 +16,52 @@ const Header = ({ siteTitle }) => (
         background: "rgb(43, 43, 45)",
         paddingTop: "16px",
         textDecoration: "none",
-        position: 'fixed',
-        width: '100%',
-        top: '0',
-        zIndex:'10000'
-        
+        position: "fixed",
+        width: "100%",
+        top: "0",
+        zIndex: "10000",
       }}
     >
       <ul
         style={{
           listStyle: "none",
           display: "flex",
-          marginLeft: '0px',
-          marginBottom: '0px',
-          overflowX: 'visible',
-          width: '100%',
-          whiteSpace: 'nowrap',
-          position: 'relative',
-          overflowX: 'scroll',
-          overflowY: 'hidden',
-          WebkitOverflowScrolling: 'touch',
+          marginLeft: "0px",
+          marginBottom: "0px",
+          overflowX: "visible",
+          width: "100%",
+          whiteSpace: "nowrap",
+          position: "relative",
+          overflowX: "scroll",
+          overflowY: "hidden",
+          WebkitOverflowScrolling: "touch",
         }}
-  >
-        <li className='buttonheader'>
+      >
+        <li className="buttonheader">
           <Link to="/" className="tab">
-            { /* <NewspaperIcon className="navbarIcons" /> */}
+            {/* <NewspaperIcon className="navbarIcons" /> */}
             Latest
           </Link>
         </li>
-        <li className='buttonheader'>
+        <li className="buttonheader">
           <Link to="/art" className="tab">
             {/*<PaletteIcon className="navbarIcons" /> */}
             Art
           </Link>
         </li>
-        <li className='buttonheader'>
+        <li className="buttonheader">
           <Link to="/guides" className="tab">
             {/*<LightbulbIcon className="navbarIcons" />*/}
             Guides
           </Link>
         </li>
-        <li className='buttonheader'>
+        <li className="buttonheader">
           <Link to="/entertainment" className="tab">
             {/*<TrophyIcon className="navbarIcons" />*/}
             Entertainment
           </Link>
         </li>
-        <li className='buttonheader'>
+        <li className="buttonheader">
           <Link to="/tools" className="tab">
             {/*<ToolsIcon className="navbarIcons" />*/}
             Tools

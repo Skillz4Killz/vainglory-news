@@ -72,7 +72,10 @@ export default () => (
               </div>
             ) : null}
             {streams.length ? <h1 className="banner">Entertainment</h1> : null}
-            <div className="CardboxGroup">
+            <div
+              className="CardboxGroup"
+              style={{ marginTop: streams.length ? null : "75px" }}
+            >
               {notStreams.map((item, index) => (
                 <Card
                   link={item.link}

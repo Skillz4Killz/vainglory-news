@@ -52,7 +52,7 @@ export default ({ pageContext }) => (
             title="Latest"
             keywords={[`vainglory`, `news`, `skillz4killz`]}
           />
-          <div className="CardboxGroup">
+          <div className="CardboxGroup" style={{ marginTop: "75px" }}>
             {category === "tools"
               ? relevantData
                   .map(a => ({ sort: Math.random(), value: a }))
