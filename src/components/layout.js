@@ -36,8 +36,12 @@ const Layout = ({ children }) => (
                 fontWeight: "600",
                 fontSize: "12px",
                 textShadow: "2px 2px 20px black",
-                marginLeft: "16px",
-                textAlign: "center"
+                textAlign: "center",
+                marginTop: '32px',
+                background: 'black',
+                width: '100%',
+                padding: '16px',
+                marginBottom: '0',
               }}
             >
               All submissions are made by users. All rights belong to the
