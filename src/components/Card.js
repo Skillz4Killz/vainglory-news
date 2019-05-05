@@ -4,12 +4,6 @@ import GatsbyImage from "gatsby-image"
 import styled from "styled-components"
 
 const StyledGatsbyImage = styled(GatsbyImage)`
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-0%);
-  width: 100%;
-  height: 100%;
 `
 
 export default props => (
@@ -20,12 +14,12 @@ export default props => (
         : (<img className="image2" src={props.image} alt={props.title} />)
       */}
       {props.fixed ? (
-        <StyledGatsbyImage className="Image1" fixed={props.fixed} />
+        <StyledGatsbyImage style={{ position: 'relative', top: '0', width: '100%', height: '100%' }} fixed={props.fixed} imgStyle={{ top: '0', objectFit: 'contain', verticalAlign: 'top', marginTop:'0px' }}/>
       ) : (
-        <img className="Image1" src={props.image} alt={props.title} />
+        <img src={props.image} alt={props.title} />
       )}
       <div className="gradient" />
-      <h4 className={props.art ? "artTitle" : "title"}>
+      <h4 className="title">
         {props.official
           ? props.title
           : props.title
