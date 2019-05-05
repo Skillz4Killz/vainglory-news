@@ -11,6 +11,7 @@
     "gatsby-plugin-manifest": "^2.0.22",
     "gatsby-plugin-offline": "^2.0.24",
     "gatsby-plugin-react-helmet": "^3.0.8",
+    "gatsby-plugin-remote-images": "^1.0.1",
     "gatsby-plugin-sharp": "^2.0.25",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-source-mongodb": "^2.0.12",
@@ -20,7 +21,8 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-twitter-embed": "^2.0.4",
-    "rss-parser": "^3.6.3"
+    "rss-parser": "^3.6.3",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "prettier": "^1.16.4"

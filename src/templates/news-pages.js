@@ -1,65 +1,119 @@
 import React from "react"
-import { graphql } from "gatsby"
-
+import Card from "../components/Card"
+import { StaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Card from "../components/Card"
+import koshkaCounter from "../images/koshka'scounter.gif"
 
-export default function ({ pageContext }) {
-  const feed = Object.values(pageContext)
-  const category = feed[0].category
-  if (!category) return null;
-  return (
-    <Layout>
-      <SEO title={category.charAt(0).toUpperCase() + category.slice(1)} />
-      <div className="CardboxGroup">
-        {category === "tools"
-          ? feed
-            .map(a => ({ sort: Math.random(), value: a }))
-            .sort((a, b) => a.sort - b.sort)
-            .map((tool, index) => (
-              <Card
-                link={tool.value.link}
-                image={tool.value.image}
-                title={tool.value.name}
-                text={tool.value.description}
-                key={index}
-              />
-            ))
-          : feed
-            .reverse()
-            .map((card, index) => (
-              <Card
-                link={card.link}
-                image={card.image}
-                text={card.author}
-                title={card.title}
-                art={["art", "guides"].includes(card.category.toLowerCase())}
-                key={index}
-              />
-            ))}
-      </div>
-    </Layout>
-  )
+const gifAssets = {
+  "koshka'scounter": koshkaCounter,
 }
 
-export const postQuery = graphql`
-  query AllPostsDocumentsPerPage($path: String!) {
-    allMongodbProdPosts(filter: { path: { eq: $path } }) {
-      edges {
-        node {
-          id
-          path
-          author
-          category
-          image
-          link
-          messageID
-          channelID
-          title
-          stream
+export default ({ pageContext }) => (
+  <StaticQuery
+    query={graphql`
+      query NewsPages {
+        allMongodbProdPosts {
+          edges {
+            node {
+              localImage {
+                childImageSharp {
+                  fixed {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+              id
+              path
+              author
+              category
+              image
+              link
+              messageID
+              channelID
+              title
+              stream
+            }
+          }
         }
       }
-    }
-  }
-`
+    `}
+    render={data => {
+      const feed = Object.values(pageContext)
+      const category = feed[0].category
+      if (!category) return null
+      const relevantData = data.allMongodbProdPosts.edges.filter(
+        edge => edge.node.category === category
+      )
+
+      return (
+        <Layout>
+          <SEO
+            title="Latest"
+            keywords={[`vainglory`, `news`, `skillz4killz`]}
+          />
+          <div className="CardboxGroup">
+            {category === "tools"
+              ? relevantData
+                  .map(a => ({ sort: Math.random(), value: a }))
+                  .sort((a, b) => a.sort - b.sort)
+                  .map((tool, index) => (
+                    <Card
+                      link={tool.value.node.link}
+                      fixed={
+                        tool.value.node.localImage.childImageSharp
+                          ? tool.value.node.localImage.childImageSharp.fixed
+                          : null
+                      }
+                      image={tool.value.node.image}
+                      title={tool.value.node.name}
+                      text={tool.value.node.description}
+                      key={index}
+                    />
+                  ))
+              : relevantData.reverse().map((card, index) => {
+                  if (card.node.image.endsWith(".gif"))
+                    console.log(
+                      card.node.title
+                        .split(" ")
+                        .join("")
+                        .toLowerCase(),
+                      gifAssets[
+                        card.node.title
+                          .split(" ")
+                          .join("")
+                          .toLowerCase()
+                      ]
+                    )
+                  const imageAsset = card.node.image.endsWith(".gif")
+                    ? gifAssets[
+                        card.node.title
+                          .split(" ")
+                          .join()
+                          .toLowerCase()
+                      ]
+                    : card.node.image
+                  return (
+                    <Card
+                      link={card.node.link}
+                      fixed={
+                        card.node.localImage.childImageSharp
+                          ? card.node.localImage.childImageSharp.fixed
+                          : null
+                      }
+                      image={imageAsset}
+                      text={card.node.author}
+                      title={card.node.title}
+                      art={["art", "guides"].includes(
+                        card.node.category.toLowerCase()
+                      )}
+                      key={index}
+                    />
+                  )
+                })}
+          </div>
+        </Layout>
+      )
+    }}
+  />
+)

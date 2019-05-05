@@ -1,11 +1,12 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-/* import NewspaperIcon from "./icons/newspaper"
-import PaletteIcon from "./icons/palette"
-import LightbulbIcon from "./icons/lightbulb"
-import TrophyIcon from "./icons/trophy"
-import ToolsIcon from "./icons/tools" */
+// import NewspaperIcon from "./icons/newspaper"
+// import PaletteIcon from "./icons/palette"
+// import LightbulbIcon from "./icons/lightbulb"
+// import TrophyIcon from "./icons/trophy"
+// import ToolsIcon from "./icons/tools"
+
 import "./header.css"
 
 const Header = ({ siteTitle }) => (
@@ -39,7 +40,7 @@ const Header = ({ siteTitle }) => (
   >
         <li className='buttonheader'>
           <Link to="/" className="tab">
-         { /* <NewspaperIcon className="navbarIcons" /> */}
+            { /* <NewspaperIcon className="navbarIcons" /> */}
             Latest
           </Link>
         </li>

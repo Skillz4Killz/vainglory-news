@@ -5,6 +5,13 @@ module.exports = {
     author: `@IGNSkillz4Killz`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: `mongodbProdPosts`,
+        imagePath: `image`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -39,10 +46,10 @@ module.exports = {
     //   },
     // },
     {
-      resolve: "gatsby-source-mongodb",
+      resolve: `gatsby-source-mongodb`,
       options: {
-        dbName: "prod",
-        collection: "posts",
+        dbName: `prod`,
+        collection: [`posts`, 'clientSchema'],
         server: {
           address: process.env.mongoAddress,
           port: process.env.mongoPort,
