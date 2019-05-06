@@ -8,6 +8,22 @@ const StyledGatsbyImage = styled(GatsbyImage)``
 export default props => (
   <a href={props.link}>
     <div className="Card">
+      <GatsbyImage
+        style={{
+          position: "absolute",
+          top: "0",
+          width: "100%",
+          height: "100%",
+        }}
+        fixed={props.fixed}
+        imgStyle={{
+          top: "0",
+          objectFit: "cover",
+          verticalAlign: "top",
+          marginTop: "0px",
+          filter: 'blur(5px)'
+        }}
+      />
       {props.fixed ? (
         <StyledGatsbyImage
           style={{
@@ -18,10 +34,7 @@ export default props => (
           }}
           fixed={props.fixed}
           imgStyle={{
-            top: "0",
             objectFit: "contain",
-            verticalAlign: "top",
-            marginTop: "0px",
           }}
         />
       ) : (
