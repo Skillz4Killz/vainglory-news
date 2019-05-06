@@ -86,7 +86,7 @@ export default () => (
                 />
               ))}
             </div>
-            <h1 className="banner">Featured</h1>
+            <h1 className="banner2">Featured</h1>
             <div className="CardboxGroup CardboxGroupLatest">
               {posts
                 .filter(p => !p.news && !p.stream && p.category !== "official")

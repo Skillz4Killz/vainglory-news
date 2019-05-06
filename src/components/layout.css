@@ -775,6 +775,22 @@ body {
   text-align: left;
 }
 
+.banner2 {
+  color: white;
+  font-size: 24px;
+  font-family: "Antonio";
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 13px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  text-align: left;
+}
+
 @media only screen and (max-width: 600px) {
   .carousel img {
     height: 400px;
