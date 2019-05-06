@@ -55,7 +55,7 @@ export default () => (
         <div>
           <div>
             <h1 className="banner">Vainglory News</h1>
-            <div className="CardboxGroup">
+            <div className="CardboxGroup CardboxGroupLatest">
               {twitterAccounts.map((username, index) => (
                 <div
                   className="selfCenter"
@@ -87,7 +87,7 @@ export default () => (
               ))}
             </div>
             <h1 className="banner">Featured</h1>
-            <div className="CardboxGroup">
+            <div className="CardboxGroup CardboxGroupLatest">
               {posts
                 .filter(p => !p.news && !p.stream && p.category !== "official")
                 .slice(0, 12)
