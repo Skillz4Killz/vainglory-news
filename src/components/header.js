@@ -13,8 +13,8 @@ const Header = ({ siteTitle }) => (
   <header>
     <div
       style={{
-        background: "rgb(43, 43, 45)",
-        paddingTop: "16px",
+        background: "rgba(0, 0, 0, 0.8)",
+        paddingTop: "6px",
         textDecoration: "none",
         position: "fixed",
         width: "100%",
@@ -27,7 +27,8 @@ const Header = ({ siteTitle }) => (
           listStyle: "none",
           display: "flex",
           marginLeft: "0px",
-          marginBottom: "0px",
+          marginBottom: "-6px",
+          padding:'0',
           overflowX: "visible",
           width: "100%",
           whiteSpace: "nowrap",

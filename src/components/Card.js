@@ -19,7 +19,7 @@ export default props => (
           fixed={props.fixed}
           imgStyle={{
             objectFit: "cover",
-            filter:'blur(10px)'
+            filter: 'blur(3px)',
           }}
         />
       ) : (
