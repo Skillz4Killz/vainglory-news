@@ -81,7 +81,7 @@ export default () => (
               {officialNews.map((item, index) => (
                 <Card
                   link={item.link}
-                  fixed={item.localImage.childImageSharp.fixed}
+                  fixed={item.localImage && item.localImage.childImageSharp.fixed}
                   title={item.title}
                   text={item.author}
                   art={false}
