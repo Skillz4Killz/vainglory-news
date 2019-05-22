@@ -2,9 +2,12 @@ import Card from "./Card"
 import { TwitterTimelineEmbed } from "react-twitter-embed"
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import styled from 'styled-components'
 
 const twitterAccounts = ["vainglory", "vainglorystatus"]
-
+const StyledTwitterTimelineEmbed = styled(TwitterTimelineEmbed)`
+background: #212427ad
+`
 export default () => (
   <StaticQuery
     query={graphql`
@@ -59,10 +62,10 @@ export default () => (
               {twitterAccounts.map((username, index) => (
                 <div
                   className="selfCenter"
-                  style={{ width: "320px", height: "225px", margin: 10 }}
+                  style={{ width: "320px", height: "225px", margin: 10, background:'#212427ad' }}
                   key={index}
                 >
-                  <TwitterTimelineEmbed
+                  <StyledTwitterTimelineEmbed
                     sourceType="profile"
                     screenName={username}
                     autoHeight
@@ -71,6 +74,7 @@ export default () => (
                     noFooter
                     noBorders
                     noScrollbar
+                    options={{background: 'transparent'}}
                   />
                 </div>
               ))}
@@ -86,7 +90,7 @@ export default () => (
                 />
               ))}
             </div>
-            <h1 className="banner">Featured</h1>
+            <h1 className="banner2">Featured</h1>
             <div className="CardboxGroup CardboxGroupLatest">
               {posts
                 .filter(p => !p.news && !p.stream && p.category !== "official")

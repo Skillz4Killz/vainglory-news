@@ -11,6 +11,24 @@ export default props => (
       {props.fixed ? (
         <StyledGatsbyImage
           style={{
+            position: "absolute",
+            top: "0",
+            width: "100%",
+            height: "100%",
+          }}
+          fixed={props.fixed}
+          imgStyle={{
+            objectFit: "cover",
+            filter: 'blur(3px)',
+          }}
+        />
+      ) : (
+          <img src={props.image} alt={props.title} />
+        )}
+
+      {props.fixed ? (
+        <StyledGatsbyImage
+          style={{
             position: "relative",
             top: "0",
             width: "100%",
@@ -18,10 +36,7 @@ export default props => (
           }}
           fixed={props.fixed}
           imgStyle={{
-            top: "0",
             objectFit: "contain",
-            verticalAlign: "top",
-            marginTop: "0px",
           }}
         />
       ) : (
