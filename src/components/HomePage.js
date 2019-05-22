@@ -62,7 +62,7 @@ export default () => (
               {twitterAccounts.map((username, index) => (
                 <div
                   className="selfCenter"
-                  style={{ width: "320px", height: "225px", margin: 10, background:'#212427ad' }}
+                  style={{ width: "320px", height: "225px", margin: 10, background: '#212427ad' }}
                   key={index}
                 >
                   <StyledTwitterTimelineEmbed
@@ -74,7 +74,7 @@ export default () => (
                     noFooter
                     noBorders
                     noScrollbar
-                    options={{background: 'transparent'}}
+                    options={{ background: 'transparent' }}
                   />
                 </div>
               ))}
@@ -98,7 +98,7 @@ export default () => (
                 .map((item, index) => (
                   <Card
                     link={item.link}
-                    fixed={item.localImage.childImageSharp.fixed}
+                    fixed={item.localImage && item.localImage.childImageSharp.fixed}
                     title={item.title}
                     text={item.author}
                     art={true}
