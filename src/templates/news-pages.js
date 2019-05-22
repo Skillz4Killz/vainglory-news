@@ -18,7 +18,7 @@ export default ({ pageContext }) => (
             node {
               localImage {
                 childImageSharp {
-                  fixed {
+                  fixed(height: 225, width: 320) {
                     ...GatsbyImageSharpFixed
                   }
                 }
@@ -55,62 +55,49 @@ export default ({ pageContext }) => (
           <div className="CardboxGroup" style={{ marginTop: "75px" }}>
             {category === "tools"
               ? relevantData
-                  .map(a => ({ sort: Math.random(), value: a }))
-                  .sort((a, b) => a.sort - b.sort)
-                  .map((tool, index) => (
-                    <Card
-                      link={tool.value.node.link}
-                      fixed={
-                        tool.value.node.localImage.childImageSharp
-                          ? tool.value.node.localImage.childImageSharp.fixed
-                          : null
-                      }
-                      image={tool.value.node.image}
-                      title={tool.value.node.name}
-                      text={tool.value.node.description}
-                      key={index}
-                    />
-                  ))
+                .map(a => ({ sort: Math.random(), value: a }))
+                .sort((a, b) => a.sort - b.sort)
+                .map((tool, index) => (
+                  <Card
+                    link={tool.value.node.link}
+                    fixed={
+                      tool.value.node.localImage.childImageSharp
+                        ? tool.value.node.localImage.childImageSharp.fixed
+                        : null
+                    }
+                    image={tool.value.node.image}
+                    title={tool.value.node.name}
+                    text={tool.value.node.description}
+                    key={index}
+                  />
+                ))
               : relevantData.reverse().map((card, index) => {
-                  if (card.node.image.endsWith(".gif"))
-                    console.log(
-                      card.node.title
-                        .split(" ")
-                        .join("")
-                        .toLowerCase(),
-                      gifAssets[
-                        card.node.title
-                          .split(" ")
-                          .join("")
-                          .toLowerCase()
-                      ]
-                    )
-                  const imageAsset = card.node.image.endsWith(".gif")
-                    ? gifAssets[
-                        card.node.title
-                          .split(" ")
-                          .join()
-                          .toLowerCase()
-                      ]
-                    : card.node.image
-                  return (
-                    <Card
-                      link={card.node.link}
-                      fixed={
-                        card.node.localImage.childImageSharp
-                          ? card.node.localImage.childImageSharp.fixed
-                          : null
-                      }
-                      image={imageAsset}
-                      text={card.node.author}
-                      title={card.node.title}
-                      art={["art", "guides"].includes(
-                        card.node.category.toLowerCase()
-                      )}
-                      key={index}
-                    />
-                  )
-                })}
+                const imageAsset = card.node.image.endsWith(".gif")
+                  ? gifAssets[
+                  card.node.title
+                    .split(" ")
+                    .join()
+                    .toLowerCase()
+                  ]
+                  : card.node.image
+                return (
+                  <Card
+                    link={card.node.link}
+                    fixed={
+                      card.node.localImage && card.node.localImage.childImageSharp
+                        ? card.node.localImage.childImageSharp.fixed
+                        : null
+                    }
+                    image={imageAsset}
+                    text={card.node.author}
+                    title={card.node.title}
+                    art={["art", "guides"].includes(
+                      card.node.category.toLowerCase()
+                    )}
+                    key={index}
+                  />
+                )
+              })}
           </div>
         </Layout>
       )
